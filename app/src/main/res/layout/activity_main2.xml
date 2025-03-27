@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <ImageView
+        android:id="@+id/fotop"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="70dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/lbllogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fotop" />
+
+    <TextView
+        android:id="@+id/lblsenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/txtNovaSenha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbllogin" />
+
+    <Button
+        android:id="@+id/btnListar"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#01887B"
+        android:text="Listar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtnomefoto" />
+
+    <Button
+        android:id="@+id/btnAlterar"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#7D47DD"
+        android:text="Alterar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListar" />
+
+    <Button
+        android:id="@+id/btnDeletar"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#A30505"
+        android:text="Deletar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlterar" />
+
+    <TextView
+        android:id="@+id/lblFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="50dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/txtnomefoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblsenha" />
+
+    <EditText
+        android:id="@+id/txtNovaSenha"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="80dp"
+        android:ems="10"
+        android:hint="Nova senha"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblsenha"
+        app:layout_constraintTop_toBottomOf="@+id/lbllogin" />
+
+    <EditText
+        android:id="@+id/txtnomefoto"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="80dp"
+        android:ems="10"
+        android:hint="Nome da foto"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblFoto"
+        app:layout_constraintTop_toBottomOf="@+id/txtNovaSenha" />
+</androidx.constraintlayout.widget.ConstraintLayout>
