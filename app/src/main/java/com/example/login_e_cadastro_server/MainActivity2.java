@@ -17,18 +17,24 @@ import com.koushikdutta.ion.Ion;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    // 1) Criando Atributos
     private TextView lbllogin,lblsenha;
     private EditText txtNovaSenha, txtnomefoto;
     private ImageView fotop;
     private Button btnListar;
+
+    // Acessando o banco de dados
     private String Host = "https://rosamititko.serv00.net/projeto/";
     private String url, ret;
+    // url = local/arquivo que quer acessar do banco de dados
+    // ret = retorna o status, se foi um sucesso ou não
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        // 2) Linkando os elementos da tela aos atributos
         lbllogin=(TextView) findViewById(R.id.lbllogin);
         lblsenha=(TextView)findViewById(R.id.lblsenha);
         txtNovaSenha=(EditText) findViewById(R.id.txtNovaSenha);
@@ -37,14 +43,16 @@ public class MainActivity2 extends AppCompatActivity {
         lbllogin.setText(MainActivity.loginx);
         lblsenha.setText(MainActivity.senhax);
 
+        // carregando uma imagem do banco, caso não carregue vai exibir uma imagem definida como vazio
         Ion.with(fotop).placeholder ( R.drawable.vazio ).
                 error ( R.drawable.vazio ).
                 load("https://rosamititko.serv00.net/projeto/imagem/"+ MainActivity.fotox+"");
 
-
+        // 3) Executando uma função ao apertar o botão. no caso Listar, Alterar e Deletar
         findViewById(R.id.btnListar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Vai exibir os dados do usuario na MainActivity3
                 Intent tela=new Intent(MainActivity2.this, MainActivity3.class);
                 MainActivity2.this.startActivity(tela);
             }
@@ -66,6 +74,11 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
 
+    // 4) funções de Deletar e Alterar
+
+    // Uma função de Deletar, onde vai deletar os dados do usuario no banco de dados
+    // Caso de certo ele vai enviar um status de "ok" e exibir uma mensagem de sucesso,
+    // se não vai exibir uma mensagem de erro na tela
     private void deletar() {
         url = Host + "deletar.php";
         Ion.with(MainActivity2.this)
@@ -91,6 +104,9 @@ public class MainActivity2 extends AppCompatActivity {
                 });
     }
 
+    // Uma função de Alterar, onde vai Alterar os dados do usuario no banco de dados
+    // Caso de certo ele vai enviar um status de "ok" e exibir uma mensagem de sucesso,
+    // se não vai exibir uma mensagem de erro na tela
     private void alterar()
     {
         url = Host + "alterar.php";

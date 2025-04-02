@@ -14,8 +14,10 @@ import com.koushikdutta.ion.Ion;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String Host="https://rosamititko.serv00.net/projeto/";
+    // 1) Criando Atributos
+    private String Host="https://rosamititko.serv00.net/projeto/"; // Acessando o banco de dados
     private String url,ret;
+    // url = local/arquivo que quer acessar do banco de dados / ret = retorna o status, se foi um sucesso ou não
     public static String fotox,loginx,senhax;
     private EditText txtlogin,txtsenha;
 
@@ -25,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        // 2) Linkando os elementos da tela aos atributos
         txtlogin=(EditText) findViewById(R.id.txtlogin);
         txtsenha=(EditText) findViewById(R.id.txtsenha);
 
+        // 3) Executando uma função ao apertar o botão. no caso Inserir e Logar
         findViewById(R.id.button5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // 4) funções de Logar e Inserir
+
+    // Uma função de Logar, onde ele verifica se o usuario existe ou não no banco de dados
+    // Caso ele exista vai enviar um status de "ok", se não vai exibir uma mensagem na tela
     private void logar()
     {
         url=Host+"login.php";
@@ -78,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
                 } );
     }
 
+    // Função que insere o dados (nome e senha) do usuario no banco de dados
+    // se tudo der certo ele envia um status de "ok", se não vai exibir uma mensagem na tela
     private void inserir()
     {
         url=Host+"inserirt.php";

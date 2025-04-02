@@ -16,8 +16,9 @@ import java.util.List;
 
 public class MainActivity3 extends AppCompatActivity {
 
-    private String Host="https://rosamititko.serv00.net/projeto/";
-    private String url,ret;
+    // 1) Criando Atributos
+    private String Host="https://rosamititko.serv00.net/projeto/"; // Acessando o banco de dados
+    private String url,ret; // url = local/arquivo que quer acessar do banco de dados
     private ListView Lista;
     public List<String> listinha;
     public ArrayAdapter<String> adap;
@@ -26,6 +27,8 @@ public class MainActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+
+        // 2) Criando uma lista que vai exibir os dados cadastrados do usuario
 
         Lista=(ListView) findViewById(R.id.Lista);
         listinha=new ArrayList<String>();
