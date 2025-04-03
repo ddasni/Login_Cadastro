@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         // 2) Linkando os elementos da tela aos atributos
         txtlogin=(EditText) findViewById(R.id.txtlogin);
         txtsenha=(EditText) findViewById(R.id.txtsenha);
@@ -46,9 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     // 4) funções de Logar e Inserir
-
     // Uma função de Logar, onde ele verifica se o usuario existe ou não no banco de dados
     // Caso ele exista vai enviar um status de "ok", se não vai exibir uma mensagem na tela
     private void logar()
@@ -63,24 +60,19 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onCompleted(Exception e, JsonObject result) {
                         ret=result.get("status").getAsString ();
-                        if(ret.equals ("ok"))
-                        {
+                        if(ret.equals ("ok")) {
                             //  Toast.makeText(getApplicationContext(),
                             //  " login e senha ok",   Toast.LENGTH_LONG).show();
                             fotox=result.get("foto").getAsString ().toString();
-
 
                             loginx=txtlogin.getText().toString();
                             senhax=txtsenha.getText().toString();
                             Intent trocar=new Intent(MainActivity.this, MainActivity2.class);
                             MainActivity.this.startActivity(trocar);
-
                         }
-                        else
-                        {
+                        else {
                             Toast.makeText(getApplicationContext(),
                                     " não existe login ou senha ",   Toast.LENGTH_LONG).show();
-
                         }
                     }
                 } );
@@ -100,17 +92,13 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onCompleted(Exception e, JsonObject result) {
                         ret=result.get("status").getAsString ();
-                        if(ret.equals ( "ok" ))
-                        {
+                        if(ret.equals ( "ok" )) {
                             Toast.makeText(getApplicationContext(),
                                     " incluido com sucesso", Toast.LENGTH_LONG).show();
-
                         }
-                        else
-                        {
+                        else {
                             Toast.makeText(getApplicationContext(),  " erro",
                                     Toast.LENGTH_LONG).show();
-
                         }
                     }
                 } );

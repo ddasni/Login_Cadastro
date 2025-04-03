@@ -73,9 +73,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
     }
 
-
     // 4) funções de Deletar e Alterar
-
     // Uma função de Deletar, onde vai deletar os dados do usuario no banco de dados
     // Caso de certo ele vai enviar um status de "ok" e exibir uma mensagem de sucesso,
     // se não vai exibir uma mensagem de erro na tela
@@ -93,11 +91,9 @@ public class MainActivity2 extends AppCompatActivity {
                         if (ret.equals("ok")) {
                             Toast.makeText(getApplicationContext(),
                                     " EXCLUIDO COM SUCESSO", Toast.LENGTH_LONG).show();
-
                         } else {
                             Toast.makeText(getApplicationContext(),
                                     " ERRO DE EXCLUSÃO", Toast.LENGTH_LONG).show();
-
                         }
 
                     }
@@ -123,15 +119,12 @@ public class MainActivity2 extends AppCompatActivity {
                         if (ret.equals("ok")) {
                             Toast.makeText(getApplicationContext(),
                                     " ALTERADO COM SUCESSO", Toast.LENGTH_LONG).show();
-
                         } else {
                             Toast.makeText(getApplicationContext(),
                                     " ERRO DE ALTERAÇÃO", Toast.LENGTH_LONG).show();
-
                         }
 
                     }
                 });
-
     }
 }
